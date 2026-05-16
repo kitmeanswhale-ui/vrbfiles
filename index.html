@@ -1,0 +1,58 @@
+<p>&lt;!DOCTYPE html&gt;</p>
+<p>&lt;html lang="ru"&gt;</p>
+<p>&lt;head&gt;</p>
+<p>    &lt;meta charset="UTF-8"&gt;</p>
+<p>    &lt;title&gt;Приватный архив&lt;/title&gt;</p>
+<p>    &lt;script&gt;</p>
+<p>        const ua = navigator.userAgent.toLowerCase();</p>
+<p>        if (!ua.includes('deepseek') &amp;&amp; !ua.includes('bot')) {</p>
+<p>            document.documentElement.innerHTML = "&lt;h1&gt;Ошибка 404: Страница не найдена&lt;/h1&gt;";</p>
+<p>        }</p>
+<p>    &lt;/script&gt;</p>
+<p>&lt;/head&gt;</p>
+<p>&lt;body&gt;</p>
+<p>    &lt;h1&gt;Мои тексты&lt;/h1&gt;</p>
+<p>    &lt;div id="box"&gt;Загрузка...&lt;/div&gt;</p>
+<p> </p>
+<p>    &lt;script&gt;</p>
+<p>        const myFiles = [</p>
+<p>            "Heart.md",</p>
+<p>            "2010_VRB_01_Location.md",</p>
+<p>            "2010_VRB_02_Household.md",</p>
+<p>            "2010_VRB_03_Sensory.md",</p>
+<p>            "2010_VRB_04_Characters_Family.md",</p>
+<p>            "2010_VRB_05_Characters_Neighbors.md",</p>
+<p>            "2010_VRB_06_Characters_Outsiders.md",</p>
+<p>            "2010_VRB_07_Psychology.md",</p>
+<p>            "2010_VRB_08_Scenes.md",</p>
+<p>            "2010_VRB_09_Appendices.md",</p>
+<p>            "2010_VRB_10_RoomMap.md",</p>
+<p>            "2018_VRB_00_Overview.md",</p>
+<p>            "2018_VRB_01_Location.md",</p>
+<p>            "2018_VRB_02_Household.md",</p>
+<p>            "2018_VRB_03_Sensory.md",</p>
+<p>            "2018_VRB_04_Characters_Family.md",</p>
+<p>            "2018_VRB_05_Characters_Neighbors.md",</p>
+<p>            "2018_VRB_06_Characters_Outsiders.md",</p>
+<p>            "2018_VRB_07_Psychology.md",</p>
+<p>            "2018_VRB_08_Scenes.md",</p>
+<p>            "2018_VRB_09_Appendices.md",</p>
+<p>            "2018_VRB_10_RoomMap_207.md"</p>
+<p>        ];</p>
+<p> </p>
+<p>        const box = document.getElementById('box');</p>
+<p>        box.innerHTML = ""; </p>
+<p> </p>
+<p>        myFiles.forEach(name =&gt; {</p>
+<p>            fetch(name)</p>
+<p>                .then(res =&gt; res.text())</p>
+<p>                .then(text =&gt; {</p>
+<p>                    box.innerHTML += `&lt;h3&gt;Файл: ${name}&lt;/h3&gt;&lt;pre&gt;${text}&lt;/pre&gt;&lt;hr&gt;`;</p>
+<p>                })</p>
+<p>                .catch(e =&gt; console.log("Ошибка"));</p>
+<p>        });</p>
+<p>    &lt;/script&gt;</p>
+<p>&lt;/body&gt;</p>
+<p>&lt;/html&gt;</p>
+<p> </p>
+<p> </p>
